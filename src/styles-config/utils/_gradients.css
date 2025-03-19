@@ -1,0 +1,66 @@
+/* 
+ * Gradient Utilities
+ * Reusable gradient styles for the application
+ */
+
+:root {
+  /* Orange Gradients */
+  --gradient-orange-horizontal: linear-gradient(90deg, var(--orange-600) 0%, var(--orange-400) 100%);
+  --gradient-orange-vertical: linear-gradient(180deg, var(--orange-500) 0%, var(--orange-600) 100%);
+  --gradient-orange-radial: radial-gradient(circle, var(--orange-400) 0%, var(--orange-600) 100%);
+  
+  /* Gray Gradients */
+  --gradient-gray-horizontal: linear-gradient(90deg, var(--gray-600) 0%, var(--gray-400) 100%);
+  --gradient-gray-vertical: linear-gradient(180deg, var(--gray-500) 0%, var(--gray-700) 100%);
+  
+  /* Light Gradients */
+  --gradient-light-vertical: linear-gradient(180deg, var(--white) 0%, var(--gray-100) 100%);
+  
+  /* Overlay Colors */
+  --overlay-dark: rgba(44, 44, 44, 0.7);
+  --overlay-light: rgba(255, 255, 255, 0.7);
+  --overlay-orange: rgba(255, 106, 36, 0.7);
+}
+
+/* Gradient Background Classes */
+.bg-gradient-orange-horizontal {
+  background: var(--gradient-orange-horizontal);
+  color: var(--text-white);
+}
+
+.bg-gradient-orange-vertical {
+  background: var(--gradient-orange-vertical);
+  color: var(--text-white);
+}
+
+.bg-gradient-orange-radial {
+  background: var(--gradient-orange-radial);
+  color: var(--text-white);
+}
+
+.bg-gradient-gray-horizontal {
+  background: var(--gradient-gray-horizontal);
+  color: var(--text-white);
+}
+
+.bg-gradient-gray-vertical {
+  background: var(--gradient-gray-vertical);
+  color: var(--text-white);
+}
+
+.bg-gradient-light-vertical {
+  background: var(--gradient-light-vertical);
+}
+
+/* Overlay Classes */
+.overlay-dark {
+  background-color: var(--overlay-dark);
+}
+
+.overlay-light {
+  background-color: var(--overlay-light);
+}
+
+.overlay-orange {
+  background-color: var(--overlay-orange);
+}

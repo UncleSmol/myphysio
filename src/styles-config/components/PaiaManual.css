@@ -1,0 +1,366 @@
+/* PAIA Manual Page Styles */
+
+.paia-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  color: var(--text-dark);
+  overflow-x: hidden; /* Prevent horizontal scroll during animations */
+}
+
+/* Header Section */
+.paia-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.paia-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--gradient-orange-horizontal);
+  border-radius: 3px;
+}
+
+.paia-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--orange-600);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.paia-subtitle {
+  font-size: 1.5rem;
+  color: var(--text-medium);
+  font-weight: 500;
+}
+
+.paia-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Section Styles */
+.paia-section {
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: var(--orange-600);
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-orange-horizontal);
+  border-radius: 3px;
+}
+
+/* Documents Grid */
+.documents-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Document Item Styles */
+.document-item {
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.document-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.document-item-content {
+  padding: 2rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.document-item h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--orange-600);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.document-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* Document Button */
+.document-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-orange-horizontal);
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: auto;
+}
+
+.document-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.document-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.document-icon {
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
+/* Legal Content Section */
+.legal-content-section {
+  margin-top: 2rem;
+}
+
+.legal-content {
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+}
+
+.legal-intro {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.legal-notice {
+  background-color: var(--primary-100);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--orange-500);
+}
+
+.legal-notice strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--orange-600);
+}
+
+.legal-notice p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Collapsible Sections */
+.collapsible-section {
+  margin-bottom: 1rem;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.collapsible-button {
+  width: 100%;
+  background-color: var(--white);
+  border: none;
+  padding: 1.25rem;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.collapsible-button:hover {
+  background-color: var(--gray-100);
+}
+
+.collapsible-button span {
+  flex: 1;
+}
+
+.collapsible-button svg {
+  font-size: 0.9rem;
+  color: var(--orange-500);
+  transition: transform 0.3s ease;
+}
+
+.collapsible-content {
+  padding: 0 1.25rem 1.25rem 1.25rem;
+  background-color: var(--white);
+  border-top: 1px solid var(--gray-200);
+}
+
+.collapsible-content h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--orange-600);
+  margin: 1.5rem 0 1rem 0;
+}
+
+.collapsible-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+  color: var(--text-dark);
+}
+
+/* Note Section */
+.paia-note {
+  background: linear-gradient(135deg, var(--primary-100), var(--secondary-100));
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  border-left: 5px solid var(--orange-500);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.paia-note h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--orange-600);
+  margin-bottom: 1rem;
+}
+
+.paia-note p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .paia-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .paia-subtitle {
+    font-size: 1.25rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .documents-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  
+  .legal-content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .paia-container {
+    padding: 2rem 1.5rem;
+  }
+  
+  .paia-header h1 {
+    font-size: 2rem;
+  }
+  
+  .paia-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .document-item h3 {
+    font-size: 1.25rem;
+  }
+  
+  .documents-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .legal-intro {
+    font-size: 1rem;
+  }
+  
+  .collapsible-button {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  
+  .paia-note {
+    padding: 2rem;
+  }
+  
+  .paia-note h3 {
+    font-size: 1.5rem;
+  }
+  
+  .paia-note p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .paia-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .document-item-content {
+    padding: 1.5rem;
+  }
+  
+  .legal-content {
+    padding: 1.25rem;
+  }
+  
+  .collapsible-content {
+    padding: 0 1rem 1rem 1rem;
+  }
+  
+  .collapsible-content h3 {
+    font-size: 1.1rem;
+  }
+}

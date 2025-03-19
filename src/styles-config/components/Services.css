@@ -1,0 +1,359 @@
+/* Services Page Styles with Expandable Cards */
+
+.services-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  color: var(--text-dark);
+  overflow-x: hidden; /* Prevent horizontal scroll during animations */
+}
+
+/* Header Section */
+.services-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.services-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--gradient-orange-horizontal);
+  border-radius: 3px;
+}
+
+.services-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--orange-600);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.services-subtitle {
+  font-size: 1.5rem;
+  color: var(--text-medium);
+  font-weight: 500;
+}
+
+.services-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Hero Image */
+.services-hero {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  margin-bottom: 2rem;
+}
+
+.services-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.services-hero:hover .services-hero-image {
+  transform: scale(1.05);
+}
+
+/* Intro Text */
+.services-intro {
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.services-intro p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+/* Services Column Layout */
+.services-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+/* Service Item Styles */
+.service-item {
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  align-self: flex-start;
+}
+
+/* Alternate positioning for even/odd items */
+.service-item.expand-right {
+  align-self: flex-start;
+}
+
+.service-item.expand-left {
+  align-self: flex-end;
+}
+
+.service-item-content {
+  padding: 1.5rem;
+  position: relative;
+}
+
+.service-item h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--orange-600);
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.service-item h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--gradient-orange-horizontal);
+  border-radius: 3px;
+}
+
+.service-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.service-summary p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+}
+
+/* Expand Button */
+.expand-button {
+  background: var(--orange-100);
+  color: var(--orange-600);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.expand-button:hover {
+  background: var(--orange-200);
+  transform: scale(1.1);
+}
+
+.expand-icon {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.expand-icon.rotated {
+  transform: rotate(180deg);
+}
+
+/* Expanded Content */
+.service-expanded-content {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-200);
+}
+
+.service-expanded-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Expanded State Styles */
+.service-item.expanded {
+  z-index: 10;
+}
+
+/* Right expansion */
+.service-item.expand-right.expanded {
+  width: calc(100% - 2rem);
+  max-width: 100%;
+}
+
+/* Left expansion */
+.service-item.expand-left.expanded {
+  width: calc(100% - 2rem);
+  max-width: 100%;
+}
+
+/* Call to Action Section */
+.services-cta {
+  background: linear-gradient(135deg, var(--primary-100), var(--secondary-100));
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  border-left: 5px solid var(--orange-500);
+}
+
+.services-cta h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--orange-600);
+  margin-bottom: 1rem;
+}
+
+.services-cta p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button {
+  background: var(--gradient-orange-horizontal);
+  color: var(--white);
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button:active {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .services-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .services-subtitle {
+    font-size: 1.25rem;
+  }
+  
+  .services-hero {
+    height: 350px;
+  }
+  
+  .service-item,
+  .service-item.expand-right,
+  .service-item.expand-left {
+    align-self: center;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .service-item.expanded {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-container {
+    padding: 2rem 1.5rem;
+  }
+  
+  .services-header h1 {
+    font-size: 2rem;
+  }
+  
+  .services-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .services-hero {
+    height: 250px;
+  }
+  
+  .services-intro p {
+    font-size: 1rem;
+  }
+  
+  .service-item h2 {
+    font-size: 1.25rem;
+  }
+  
+  /* Mobile-specific styles for expanded content */
+  .service-expanded-content {
+    border-top: 1px solid var(--gray-200);
+    padding-top: 1rem;
+    margin-top: 1rem;
+  }
+  
+  /* Ensure the expanded content slides down on mobile */
+  .service-item.expanded .service-expanded-content {
+    display: block;
+  }
+  
+  .services-cta {
+    padding: 2rem;
+  }
+  
+  .services-cta h3 {
+    font-size: 1.75rem;
+  }
+  
+  .services-cta p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .services-header h1 {
+    font-size: 1.75rem;
+  }
+  
+  .services-hero {
+    height: 200px;
+  }
+  
+  .service-item-content {
+    padding: 1.25rem;
+  }
+  
+  .cta-button {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,184 @@
+/* 
+ * CSS Prefixes
+ * Vendor prefixes for cross-browser compatibility
+ */
+
+/* Flexbox */
+.display-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex-direction-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.flex-direction-row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.justify-content-center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.justify-content-between {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.align-items-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.flex-wrap {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+/* Transforms */
+.transform-translate-y-0 {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.transform-translate-y-100 {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+.transform-scale {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+/* Transitions */
+.transition-all {
+  -webkit-transition: all var(--transition-normal);
+  transition: all var(--transition-normal);
+}
+
+.transition-transform {
+  -webkit-transition: -webkit-transform var(--transition-normal);
+  transition: -webkit-transform var(--transition-normal);
+  transition: transform var(--transition-normal);
+  transition: transform var(--transition-normal), -webkit-transform var(--transition-normal);
+}
+
+.transition-colors {
+  -webkit-transition: background-color var(--transition-normal), border-color var(--transition-normal), color var(--transition-normal);
+  transition: background-color var(--transition-normal), border-color var(--transition-normal), color var(--transition-normal);
+}
+
+/* Animations */
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@-webkit-keyframes slideDown {
+  from { -webkit-transform: translateY(-100%); transform: translateY(-100%); }
+  to { -webkit-transform: translateY(0); transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { -webkit-transform: translateY(-100%); transform: translateY(-100%); }
+  to { -webkit-transform: translateY(0); transform: translateY(0); }
+}
+
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+
+/* Box Shadow */
+.box-shadow-sm {
+  -webkit-box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.box-shadow-md {
+  -webkit-box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-md);
+}
+
+.box-shadow-lg {
+  -webkit-box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+/* User Select */
+.user-select-none {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Appearance */
+.appearance-none {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Background Clip */
+.bg-clip-padding {
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+
+.bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Backdrop Filter */
+.backdrop-blur {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+/* Column Count */
+.column-count-2 {
+  -webkit-column-count: 2;
+  column-count: 2;
+}
+
+.column-count-3 {
+  -webkit-column-count: 3;
+  column-count: 3;
+}
+
+/* Sticky Position */
+.position-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+/* Font Smoothing */
+.font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

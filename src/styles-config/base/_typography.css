@@ -1,0 +1,221 @@
+/* 
+ * Typography Styles
+ * Text formatting and typography classes
+ */
+
+/* Heading Sizes */
+h1, .h1 {
+  font-size: var(--font-size-xxxl);
+}
+
+h2, .h2 {
+  font-size: var(--font-size-xxl);
+}
+
+h3, .h3 {
+  font-size: var(--font-size-xl);
+}
+
+h4, .h4 {
+  font-size: var(--font-size-lg);
+}
+
+h5, .h5 {
+  font-size: var(--font-size-md);
+}
+
+h6, .h6 {
+  font-size: var(--font-size-sm);
+}
+
+/* Display Headings */
+.display-1 {
+  font-size: 4rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+}
+
+.display-2 {
+  font-size: 3.5rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+}
+
+.display-3 {
+  font-size: 3rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+}
+
+.display-4 {
+  font-size: 2.5rem;
+  font-weight: var(--font-weight-bold);
+  line-height: 1.1;
+}
+
+/* Font Weights */
+.font-weight-light {
+  font-weight: 300;
+}
+
+.font-weight-normal {
+  font-weight: var(--font-weight-regular);
+}
+
+.font-weight-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.font-weight-semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.font-weight-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+/* Text Alignment */
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+/* Text Transforms */
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+/* Text Colors */
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-primary-light {
+  color: var(--text-primary-light);
+}
+
+.text-dark {
+  color: var(--text-dark);
+}
+
+.text-medium {
+  color: var(--text-medium);
+}
+
+.text-light {
+  color: var(--text-light);
+}
+
+.text-white {
+  color: var(--text-white);
+}
+
+/* Text Styles */
+.text-muted {
+  color: var(--gray-600);
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.text-break {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Font Sizes */
+.text-xs {
+  font-size: var(--font-size-xs);
+}
+
+.text-sm {
+  font-size: var(--font-size-sm);
+}
+
+.text-md {
+  font-size: var(--font-size-md);
+}
+
+.text-lg {
+  font-size: var(--font-size-lg);
+}
+
+.text-xl {
+  font-size: var(--font-size-xl);
+}
+
+.text-xxl {
+  font-size: var(--font-size-xxl);
+}
+
+/* Line Heights */
+.line-height-1 {
+  line-height: 1;
+}
+
+.line-height-sm {
+  line-height: 1.25;
+}
+
+.line-height-base {
+  line-height: 1.5;
+}
+
+.line-height-lg {
+  line-height: 1.75;
+}
+
+/* Responsive Typography */
+@media (max-width: 576px) {
+  h1, .h1 {
+    font-size: calc(var(--font-size-xxxl) * 0.85);
+  }
+  
+  h2, .h2 {
+    font-size: calc(var(--font-size-xxl) * 0.85);
+  }
+  
+  h3, .h3 {
+    font-size: calc(var(--font-size-xl) * 0.9);
+  }
+  
+  .display-1 {
+    font-size: 3rem;
+  }
+  
+  .display-2 {
+    font-size: 2.75rem;
+  }
+  
+  .display-3 {
+    font-size: 2.5rem;
+  }
+  
+  .display-4 {
+    font-size: 2.25rem;
+  }
+}

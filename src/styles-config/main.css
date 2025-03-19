@@ -1,0 +1,23 @@
+/* 
+ * Main CSS File
+ * Imports all CSS files in the correct order
+ */
+
+/* Base Styles */
+@import './base/_reset.css';
+@import './base/_variables.css';
+@import './base/_typography.css';
+
+/* Utilities */
+@import './utils/_shadows.css';
+@import './utils/_gradients.css';
+@import './utils/_animations.css';
+
+/* Components */
+@import './components/_header.css';
+@import './components/_buttons.css';
+@import './components/_cards.css';
+@import './components/_forms.css';
+
+/* Prefixes */
+@import './prefixes/_prefixes.css';
