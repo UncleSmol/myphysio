@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/myphysio/static/css/main.482e5e0c.css",
+    "main.js": "/myphysio/static/js/main.10e5a488.js",
+    "index.html": "/myphysio/index.html",
+    "main.482e5e0c.css.map": "/myphysio/static/css/main.482e5e0c.css.map",
+    "main.10e5a488.js.map": "/myphysio/static/js/main.10e5a488.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.482e5e0c.css",
+    "static/js/main.10e5a488.js"
+  ]
+}
