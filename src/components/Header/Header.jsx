@@ -1,9 +1,12 @@
+
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FaHome, FaVirus, FaBars, FaTimes } from 'react-icons/fa';
 import { gsap } from 'gsap';
 import useRippleEffect from '../../hooks/useRippleEffect';
 import '../../styles-config/components/_header.css';
+// Import the SVG logo
+import { ReactComponent as DevDocLogo } from '../../sig/dev-doc-logo.svg';
 
 // Navigation items data - defined outside component to prevent recreations
 const navItems = [
@@ -18,6 +21,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isSvgHovered, setIsSvgHovered] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   
@@ -34,10 +38,17 @@ const Header = () => {
   // Apply ripple effect to nav links and buttons
   useRippleEffect('.nav-link, .top-bar-item');
   
-  // Check if a link is active - memoized to prevent recreations
+  // Check if a link is active - fixed to correctly identify active links
   const isLinkActive = useCallback((path) => {
-    return location.pathname === path || 
-           (location.pathname.includes(path) && path !== '/' && path !== '');
+    if (path === '/' && location.pathname === '/') {
+      return true;
+    }
+    
+    // For non-home links, ensure exact match or proper subpath match
+    return path !== '/' && (
+      location.pathname === path ||
+      (location.pathname.startsWith(path + '/') && path !== '')
+    );
   }, [location.pathname]);
   
   // Close menu with animation - define this first since it's used in other functions
@@ -296,36 +307,53 @@ const Header = () => {
     };
   }, []);
   
-  // Add a subtle animation to the active link
+  // Reset navItemsRef array when dependencies change to prevent stale refs
   useEffect(() => {
-    navItemsRef.current.forEach((item, index) => {
-      if (!item) return;
-      
-      const link = item.querySelector('.nav-link');
-      if (!link) return;
-      
-      const path = navItems[index]?.path;
-      if (!path) return;
-      
-      if (isLinkActive(path)) {
-        link.classList.add('active');
+    // Reset the ref array at the beginning of each render cycle
+    navItemsRef.current = [];
+  }, [location.pathname]); // Only reset when navigation changes
+  
+  // Add a subtle animation to the active link and update active states
+  useEffect(() => {
+    // Once all the nav items have been rendered and refs collected
+    setTimeout(() => {
+      navItemsRef.current.forEach((item, index) => {
+        if (!item) return;
         
-        gsap.fromTo(
-          link,
-          { scale: 1 },
-          { 
-            scale: 1.05, 
-            duration: 0.3, 
-            ease: 'power2.out',
-            yoyo: true,
-            repeat: 1
+        const link = item.querySelector('.nav-link');
+        if (!link) return;
+        
+        // Home is first item (index 0)
+        const path = index === 0 ? '/' : navItems[index - 1]?.path;
+        if (path === undefined) return;
+        
+        // Check if this link should be active
+        const shouldBeActive = isLinkActive(path);
+        
+        // Update class based on active state
+        if (shouldBeActive) {
+          if (!link.classList.contains('active')) {
+            link.classList.add('active');
+            
+            // Add a subtle animation for the newly active link
+            gsap.fromTo(
+              link,
+              { scale: 1 },
+              { 
+                scale: 1.05, 
+                duration: 0.3, 
+                ease: 'power2.out',
+                yoyo: true,
+                repeat: 1
+              }
+            );
           }
-        );
-      } else {
-        link.classList.remove('active');
-      }
-    });
-  }, [location.pathname, isLinkActive]);
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }, 0); // Run after render cycle
+  }, [location.pathname, isLinkActive, navItems]);
   
   // Add nav items to ref array
   const addToNavItemsRef = (el) => {
@@ -452,6 +480,33 @@ const Header = () => {
                   )}
                 </li>
               ))}
+              
+              {/* Dev Doc Logo SVG at the bottom of the navigation pane (mobile only) */}
+              {isMobile && isMenuOpen && (
+                <li className="nav-item svg-container">
+                  <div 
+                    className="nav-svg-item"
+                    onMouseEnter={() => setIsSvgHovered(true)}
+                    onMouseLeave={() => setIsSvgHovered(false)}
+                    style={{
+                      opacity: isSvgHovered ? 1 : 0.5,
+                      filter: `blur(${isSvgHovered ? 4 : 0}px)`,
+                      transition: 'opacity 0.3s ease, filter 0.3s ease',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      marginTop: '20px',
+                      padding: '10px 0'
+                    }}
+                  >
+                    {/* Use the imported SVG */}
+                    <DevDocLogo 
+                      width="100" 
+                      height="40" 
+                      style={{ maxWidth: '100%' }}
+                    />
+                  </div>
+                </li>
+              )}
             </ul>
           </div>
         </nav>

@@ -485,3 +485,52 @@ html {
     opacity: 0;
   }
 }
+
+/* Style for the SVG container */
+.nav-svg-item {
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+  margin-top: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure the SVG container takes full width */
+.svg-container {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Style for the SVG container */
+.nav-svg-item {
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+  margin-top: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure the SVG container takes full width */
+.svg-container {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* Style for the SVG logo */
+.nav-svg-item svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-svg-item {
+    padding: 12px 0;
+  }
+}
